@@ -16,7 +16,13 @@ import java.io.IOException;
 import java.sql.*;
 
 public class GUI {
-    private final String url = "jdbc:sqlserver://localhost\\SQLEXPRESS;database=SHPS;integratedSecurity=true;";
+
+    private static final String url = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;"
+            + "databaseName=SHPS;"
+            + "integratedSecurity=true;"
+            + "encrypt=true;"
+            + "trustServerCertificate=true;"
+            + "loginTimeout=10;";
     public static Connection connection;
     public static Statement statement;
     public static ResultSet resultSet;
@@ -45,6 +51,7 @@ public class GUI {
 
         BufferedImage myImage = null;
         try {
+
             myImage = ImageIO.read(new File("images/welcome.jpg"));
         } catch (IOException e) {
             e.printStackTrace();

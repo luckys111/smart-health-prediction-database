@@ -4,7 +4,12 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class Specialty {
-    private static final String url = "jdbc:sqlserver://localhost;database=SHPS;integratedSecurity=true;";
+    public static final String url = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;"
+            + "databaseName=SHPS;"
+            + "integratedSecurity=true;"
+            + "encrypt=true;"
+            + "trustServerCertificate=true;"
+            + "loginTimeout=10;";
     public static Connection connection;
     public static Statement statement;
     public static ResultSet resultSet;
